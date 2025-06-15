@@ -1,92 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Evaporative Cooler AC with ANN Control | Project - Amrit Thapa</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <style>
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f5f7fa; color: #333;}
-    .section-title { font-size: 2rem; font-weight: 600; margin-top: 2.2rem; color: #2c3e50;}
-    .project-hero { background: #e6ecf3; padding: 3rem 2rem 2rem 2rem; text-align: center;}
-    .project-hero h1 { font-weight: bold; color: #0d6efd;}
-    .project-image { width: 100%; max-width: 340px; height: 180px; object-fit: cover; border: 1px solid #ccc; border-radius: 10px; margin-bottom: 0.7rem; background: #fff; transition: box-shadow 0.2s, transform 0.2s; cursor: pointer; box-shadow: 0 2px 8px rgba(80,100,120,0.06);}
-    .project-image:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.13); transform: scale(1.04);}
-    .img-caption { font-size: .97rem; color: #4d5a6b; min-height: 48px; margin-bottom: 8px;}
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Evaporative Cooling AC Project | Amrit Thapa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet" />
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f7fa; color: #333; }
+        .section-title { font-size: 2rem; font-weight: 600; margin-top: 2.2rem; color: #2c3e50; }
+        .gallery-title { font-size: 1.28rem; font-weight: 600; color: #1976d2; margin: 2.2rem 0 1.1rem 0;}
+        .project-hero { background: #d9e3f0; padding: 3rem 2rem 2rem 2rem; text-align: center; }
+        .project-hero h1 { font-weight: bold; color: #0d6efd; }
+        .img-group { margin-bottom: 2.5rem; }
+        .project-img-thumb {
+            width: 100%; max-width: 340px; height: 190px; object-fit: cover;
+            border: 1px solid #ccc; border-radius: 10px; margin-bottom: 0.7rem; background: #fff;
+            transition: box-shadow 0.2s, transform 0.2s; cursor: pointer;
+            box-shadow: 0 2px 8px rgba(80,100,120,0.06);
+        }
+        .project-img-thumb:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.13); transform: scale(1.04);}
+        .img-caption { font-size: .97rem; color: #4d5a6b; min-height: 48px; margin-bottom: 8px;}
+        .see-all-link { font-size: 0.98rem; color: #1976d2; cursor: pointer; text-decoration: underline;}
+        .see-all-link:hover { color: #0d6efd; text-decoration: underline;}
+        .glightbox-clean .gdesc-inner { color: #222; font-size: 1rem; }
+        @media (max-width: 768px) {
+            .project-img-thumb { height: 140px; }
+        }
+        .navbar-nav .dropdown-menu {
+            display: none !important;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .navbar-nav .dropdown:hover .dropdown-menu {
+            display: block !important;
+            visibility: visible;
+            opacity: 1;
+            margin-top: 0;
+        }
+        .navbar-nav .dropdown:hover .dropdown-toggle::after {
+            transform: rotate(-180deg);
+        }
+        @media (max-width: 991.98px) {
+            .navbar-nav .dropdown-menu {
+                display: none !important;
+                visibility: hidden;
+                opacity: 0;
+            }
+            .navbar-nav .dropdown.show .dropdown-menu {
+                display: block !important;
+                visibility: visible;
+                opacity: 1;
+            }
+            .navbar-nav .dropdown:hover .dropdown-menu {
+                display: none !important;
+            }
+            .navbar-nav .dropdown-toggle::after {
+                transform: none;
+            }
+        }
+    </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="../index.html">Amrit Thapa</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="../index.html#experience">Work Experience</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle"
-               href="#"
-               id="projectsDropdown"
-               role="button"
-               data-bs-toggle="dropdown"
-               aria-expanded="false">
-              Projects
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
-              <li><a class="dropdown-item" href="FEA.html">FEA & Structural Simulation</a></li>
-              <li><a class="dropdown-item" href="WindTunnel.html">Closed-Circuit Wind Tunnel Design</a></li>
-              <li><a class="dropdown-item" href="EvaporativeCoolerAC.html">Evaporative Cooler AC with ANN Control</a></li>
-              <li><a class="dropdown-item" href="EvaporativeCondenser.html">Evaporative Cooled Condenser Retrofit</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="../index.html#certificates">Certificates</a></li>
-          <li class="nav-item"><a class="nav-link" href="../index.html#resume">Resume</a></li>
-          <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+    <!-- UNIVERSAL NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">Amrit Thapa</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#experience">Work Experience</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown">
+                            Projects
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
+                            <li><a class="dropdown-item" href="FEA.html">FEA & Structural Simulation</a></li>
+                            <li><a class="dropdown-item" href="WindTunnel.html">Closed-Circuit Wind Tunnel Design</a></li>
+                            <li><a class="dropdown-item" href="EvaporativeCoolerAC.html">Evaporative Cooler AC with ANN Control</a></li>
+                            <li><a class="dropdown-item" href="EvaporativeCondenser.html">Evaporative Cooled Condenser Retrofit</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#certificates">Certificates</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#resume">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END UNIVERSAL NAVBAR -->
+
+    <section class="project-hero" data-aos="fade-up">
+        <h1>Temperature and Humidity Control in an<br>Evaporative Cooling AC System</h1>
+    </section>
+
+    <section class="container py-4" data-aos="fade-up">
+        <h2 class="section-title">Project Introduction</h2>
+        <p>
+            This project developed a combined <strong>evaporative cooling and desiccant wheel (EC/DW)</strong> system for residential temperature and humidity control, aiming for substantial energy and emissions savings compared to conventional AC systems. The objectives were to create a mathematical and simulation model for house thermal and humidity dynamics, design a closed-loop MIMO (temperature & humidity) EC/DW system with ANN controller, and compare the system's energy use and sustainability performance with a standard vapor-compression AC. The project demonstrates how modern controls and hybrid HVAC technology can make sustainable cooling feasible even in humid climates.
+        </p>
+
+        <h2 class="section-title mt-5">Methodology</h2>
+        <ul>
+            <li><b>Dynamic Modeling:</b> Differential equations and Simulink models for temperature and humidity of residential spaces.</li>
+            <li><b>Controller Design:</b> PID and artificial neural network (ANN) approaches for setpoint tracking and disturbance rejection.</li>
+            <li><b>Performance Evaluation:</b> Simulation of open- and closed-loop responses for temperature and humidity, plus energy and emissions analysis.</li>
         </ul>
-      </div>
-    </div>
-  </nav>
-  <section class="project-hero">
-      <h1>Evaporative Cooler AC with ANN Control</h1>
-      <p class="lead">Hybrid Cooling System Optimized with Artificial Neural Network</p>
-  </section>
-  <section class="container py-4">
-      <h2 class="section-title">Project Overview</h2>
-      <p>
-          This project explores a hybrid air-conditioning system that combines evaporative cooling with traditional methods, managed using an Artificial Neural Network (ANN) controller for optimal performance and energy savings.
-      </p>
-      <h2 class="section-title mt-5">Key Features</h2>
-      <ul>
-        <li>Integrated ANN to predict and control temperature and humidity levels.</li>
-        <li>Hybrid cycle to minimize electrical consumption and improve efficiency.</li>
-        <li>Experimental validation and comparison with standard AC systems.</li>
-      </ul>
-      <h2 class="section-title mt-5">Visuals</h2>
-      <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col text-center">
-          <img src="../images/EvaporativeCoolerAC/setup.jpg" alt="Experimental Setup" class="project-image img-fluid">
-          <p class="img-caption">Experimental Setup</p>
+
+        <h2 class="section-title mt-5">Key Results</h2>
+        <ul>
+            <li>Closed-loop EC/DW system achieved &lt;3% steady-state error for temperature and humidity setpoints.</li>
+            <li>Energy savings and emissions reduction up to 80% compared to vapor-compression AC.</li>
+            <li>Demonstrated feasibility of advanced control (ANN) for residential HVAC systems.</li>
+        </ul>
+
+        <!-- GALLERY: BLOCK DIAGRAMS -->
+        <div class="gallery-title">Block Diagrams & Simulink Models</div>
+        <div class="row img-group">
+            <div class="col-md-6 col-lg-4 text-center mb-4">
+                <a href="../images/Evaporative Cooling/Control System block diagram for Temperature control.png" class="glightbox block-diagrams" data-gallery="block-diagrams" data-glightbox="title: Control System block diagram for Temperature control">
+                    <img src="../images/Evaporative Cooling/Control System block diagram for Temperature control.png" alt="Control System block diagram for Temperature control" class="project-img-thumb img-fluid shadow-sm">
+                </a>
+                <div class="img-caption">Temperature Control Block Diagram</div>
+            </div>
+            <div class="col-md-6 col-lg-4 text-center mb-4">
+                <a href="../images/Evaporative Cooling/Control System block diagram for humidity control.png" class="glightbox block-diagrams" data-gallery="block-diagrams" data-glightbox="title: Control System block diagram for humidity control">
+                    <img src="../images/Evaporative Cooling/Control System block diagram for humidity control.png" alt="Control System block diagram for humidity control" class="project-img-thumb img-fluid shadow-sm">
+                </a>
+                <div class="img-caption">Humidity Control Block Diagram</div>
+            </div>
+            <div class="col-md-6 col-lg-4 text-center mb-4">
+                <a href="../images/Evaporative Cooling/ANN closed loop simulink model fot TH.png" class="glightbox block-diagrams" data-gallery="block-diagrams" data-glightbox="title: ANN closed loop simulink model for TH">
+                    <img src="../images/Evaporative Cooling/ANN closed loop simulink model fot TH.png" alt="ANN closed loop simulink model for TH" class="project-img-thumb img-fluid shadow-sm">
+                </a>
+                <div class="img-caption">ANN Closed Loop Simulink Model (Temperature)</div>
+            </div>
+            <!-- Hidden images for the group -->
+            <a href="../images/Evaporative Cooling/ANN closed loop simulink model fot Rh.png" class="glightbox block-diagrams d-none" data-gallery="block-diagrams" data-glightbox="title: ANN closed loop simulink model for Rh"></a>
         </div>
-        <div class="col text-center">
-          <img src="../images/EvaporativeCoolerAC/ANN-controller.jpg" alt="ANN Control Schematic" class="project-image img-fluid">
-          <p class="img-caption">ANN Control Schematic</p>
+        <div class="text-end mb-2"><span class="see-all-link" onclick="openGallery('block-diagrams')">See all block diagrams</span></div>
+
+        <!-- GALLERY: OPEN-LOOP RESPONSES -->
+        <div class="gallery-title">Open-Loop System Responses</div>
+        <div class="row img-group">
+            <div class="col-md-6 col-lg-4 text-center mb-4">
+                <a href="../images/Evaporative Cooling/Open-Loop Model Response to set point (Ts) changes.png" class="glightbox open-loop" data-gallery="open-loop" data-glightbox="title: Open-Loop Model Response to set point (Ts) changes">
+                    <img src="../images/Evaporative Cooling/Open-Loop Model Response to set point (Ts) changes.png" alt="Open-Loop Model Response to set point (Ts) changes" class="project-img-thumb img-fluid shadow-sm">
+                </a>
+                <div class="img-caption">Open-Loop: Setpoint (Ts) Changes</div>
+            </div>
+            <div class="col-md-6 col-lg-4 text-center mb-4">
+                <a href="../images/Evaporative Cooling/Open-Loop Model Response to distrubance  (To) changes.png" class="glightbox open-loop" data-gallery="open-loop" data-glightbox="title: Open-Loop Model Response to disturbance (To) changes">
+                    <img src="../images/Evaporative Cooling/Open-Loop Model Response to distrubance  (To) changes.png" alt="Open-Loop Model Response to disturbance (To) changes" class="project-img-thumb img-fluid shadow-sm">
+                </a>
+                <div class="img-caption">Open-Loop: Disturbance (To) Changes</div>
+            </div>
+            <div class="col-md-6 col-lg-4 text-center mb-4">
+                <a href="../images/Evaporative Cooling/Open-Loop Model Response to set point (Ws) changes.png" class="glightbox open-loop" data-gallery="open-loop" data-glightbox="title: Open-Loop Model Response to set point (Ws) changes">
+                    <img src="../images/Evaporative Cooling/Open-Loop Model Response to set point (Ws) changes.png" alt="Open-Loop Model Response to set point (Ws) changes" class="project-img-thumb img-fluid shadow-sm">
+                </a>
+                <div class="img-caption">Open-Loop: Setpoint (Ws) Changes</div>
+            </div>
+            <!-- Hidden images for the group -->
+            <a href="../images/Evaporative Cooling/Open-Loop Model Response to distrubance  (Wo) changes.png" class="glightbox open-loop d-none" data-gallery="open-loop" data-glightbox="title: Open-Loop Model Response to disturbance (Wo) changes"></a>
         </div>
-      </div>
-      <h2 class="section-title mt-5">Tools Used</h2>
-      <p>MATLAB, Arduino, Sensors (Temp/Humidity), Data Acquisition, Python</p>
-      <h2 class="section-title mt-5">Category</h2>
-      <p>Thermal Systems, Smart Controls, Energy Efficiency</p>
-  </section>
-  <footer class="bg-light text-center py-3 mt-4 border-top">
-      &copy; 2025 Amrit Thapa. All rights reserved.
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init();</script>
+        <div class="text-end mb-2"><span class="see-all-link" onclick="openGallery('open-loop')">See all open-loop results</span></div>
+
+        <!-- GALLERY: CLOSED-LOOP RESPONSES -->
+        <div class="gallery-title">Closed-Loop (PID & ANN) Responses</div>
+        <div class="row img-group">
+            <div class="col-md-6 col-lg-4 text-center mb-4">
+                <a href="../images/Evaporative Cooling/Cloosed- Loop Model Response to set point (Ts) changes.png" class="glightbox closed-loop" data-gallery="closed-loop" data-glightbox="title: Closed-Loop Model Response to set point (Ts) changes">
+                    <img src="../images/Evaporative Cooling/Cloosed- Loop Model Response to set point (Ts) changes.png" alt="Closed-Loop Model Response to set point (Ts) changes" class="project-img-thumb img-fluid shadow-sm">
+                </a>
+                <div class="img-caption">Closed-Loop: Setpoint (Ts) Changes</div>
+            </div>
+            <div class="col-md-6 col-lg-4 text-center mb-4">
+                <a href="../images/Evaporative Cooling/Closed-Loop Model Response to set point (Ws) changes.png" class="glightbox closed-loop" data-gallery="closed-loop" data-glightbox="title: Closed-Loop Model Response to set point (Ws) changes">
+                    <img src="../images/Evaporative Cooling/Closed-Loop Model Response to set point (Ws) changes.png" alt="Closed-Loop Model Response to set point (Ws) changes" class="project-img-thumb img-fluid shadow-sm">
+                </a>
+                <div class="img-caption">Closed-Loop: Setpoint (Ws) Changes</div>
+            </div>
+            <div class="col-md-6 col-lg-4 text-center mb-4">
+                <a href="../images/Evaporative Cooling/Cloosed- Loop Model Response to distrubance (To) changes.png" class="glightbox closed-loop" data-gallery="closed-loop" data-glightbox="title: Closed-Loop Model Response to disturbance (To) changes">
+                    <img src="../images/Evaporative Cooling/Cloosed- Loop Model Response to distrubance (To) changes.png" alt="Closed-Loop Model Response to disturbance (To) changes" class="project-img-thumb img-fluid shadow-sm">
+                </a>
+                <div class="img-caption">Closed-Loop: Disturbance (To) Changes</div>
+            </div>
+            <!-- Hidden images for the group -->
+            <a href="../images/Evaporative Cooling/Closed-Loop Model Response to distrubance  (Wo) changes.png" class="glightbox closed-loop d-none" data-gallery="closed-loop" data-glightbox="title: Closed-Loop Model Response to disturbance (Wo) changes"></a>
+        </div>
+        <div class="text-end mb-2"><span class="see-all-link" onclick="openGallery('closed-loop')">See all closed-loop results</span></div>
+
+        <!-- GALLERY: ANN & ADVANCED RESPONSES -->
+        <div class="gallery-title">ANN Model & Advanced Results</div>
+        <div class="row img-group">
+            <div class="col-md-6 col-lg-4 text-center mb-4">
+                <a href="../images/Evaporative Cooling/ANN plots for Temperature.png" class="glightbox ann" data-gallery="ann" data-glightbox="title: ANN plots for Temperature">
+                    <img src="../images/Evaporative Cooling/ANN plots for Temperature.png" alt="ANN plots for Temperature" class="project-img-thumb img-fluid shadow-sm">
+                </a>
+                <div class="img-caption">ANN Plots: Temperature</div>
+            </div>
+            <div class="col-md-6 col-lg-4 text-center mb-4">
+                <a href="../images/Evaporative Cooling/ANN plots for Humidity.png" class="glightbox ann" data-gallery="ann" data-glightbox="title: ANN plots for Humidity">
+                    <img src="../images/Evaporative Cooling/ANN plots for Humidity.png" alt="ANN plots for Humidity" class="project-img-thumb img-fluid shadow-sm">
+                </a>
+                <div class="img-caption">ANN Plots: Humidity</div>
+            </div>
+            <!-- Hidden images for the group -->
+            <a href="../images/Evaporative Cooling/Cloosed- Loop Model Response to distrubance (To) changes using ANN model.png" class="glightbox ann d-none" data-gallery="ann" data-glightbox="title: Closed-Loop Model Response to disturbance (To) changes using ANN model"></a>
+            <a href="../images/Evaporative Cooling/Cloosed- Loop Model Response to set point (Ts) changes using ANN model.png" class="glightbox ann d-none" data-gallery="ann" data-glightbox="title: Closed-Loop Model Response to set point (Ts) changes using ANN model"></a>
+            <a href="../images/Evaporative Cooling/Closed-Loop Model Response to distrubance (Wo) changes using ANN model.png" class="glightbox ann d-none" data-gallery="ann" data-glightbox="title: Closed-Loop Model Response to disturbance (Wo) changes using ANN model"></a>
+            <a href="../images/Evaporative Cooling/Closed-Loop Model Response to set point (Ws) changes using ANN model.png" class="glightbox ann d-none" data-gallery="ann" data-glightbox="title: Closed-Loop Model Response to set point (Ws) changes using ANN model"></a>
+        </div>
+        <div class="text-end mb-2"><span class="see-all-link" onclick="openGallery('ann')">See all ANN results</span></div>
+
+        <h2 class="section-title mt-5">Conclusion & Future Recommendations</h2>
+        <ul>
+            <li>The proposed EC/DW system significantly enhances energy efficiency and sustainability for residential cooling and dehumidification.</li>
+            <li>Future work includes integration with renewable energy, advanced desiccant materials, and real-world system implementation.</li>
+        </ul>
+    </section>
+
+    <footer class="bg-light text-center py-3 mt-4 border-top">
+        &copy; 2025 Amrit Thapa. All rights reserved.
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+        AOS.init();
+        // Group-based lightbox activation
+        function openGallery(group) {
+            const first = document.querySelector('.glightbox.' + group);
+            if(first) first.click();
+        }
+        GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true, closeButton: true, zoomable: true });
+    </script>
 </body>
 </html>
