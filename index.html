@@ -7,18 +7,18 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
   <style>
-    /* — Base — */
+    /* Base */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f5f7fa;
       color: #333;
       line-height: 1.6;
     }
-    .navbar-brand:hover {
+    a.navbar-brand:hover {
       color: #0d6efd !important;
     }
 
-    /* — Hero — */
+    /* Hero */
     .hero {
       background-color: #d9e3f0;
       text-align: center;
@@ -33,7 +33,7 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
-    /* — Section Titles — */
+    /* Section titles */
     .section-title {
       font-size: 2rem;
       font-weight: 600;
@@ -41,7 +41,7 @@
       color: #2c3e50;
     }
 
-    /* — Work Entries — */
+    /* Work entries */
     .work-entry {
       border-left: 4px solid #0d6efd;
       padding-left: 1rem;
@@ -54,7 +54,7 @@
       padding-left: 1.2rem;
     }
 
-    /* — Certificates & Badges — */
+    /* Certificates & badges */
     .cert-img {
       max-height: 250px;
       object-fit: cover;
@@ -78,12 +78,9 @@
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#experience">Work Experience</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle"
-               href="#"
-               id="projectsDropdown"
-               role="button"
-               data-bs-toggle="dropdown"
-               aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#"
+               id="projectsDropdown" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">
               Projects
             </a>
             <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
@@ -101,7 +98,7 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero" data-aos="fade-up">
     <img src="images/Profile Photo.JPG" alt="Profile Picture">
     <h1 class="mb-2">Amrit Thapa</h1>
@@ -161,20 +158,25 @@
   <section id="certificates" class="container py-4" data-aos="fade-up">
     <h2 class="section-title">Certificates</h2>
     <div class="row g-4">
-      <div class="col-md-4 text-center">
-        <img src="images/Coursera Semiconducter Packaging Manufacturing.jpg" alt="Semiconductor Certificate" class="img-fluid rounded cert-img shadow">
+      <div class="col-md-3 text-center">
+        <img src="images/Coursera Semiconducter Packaging Manufacturing.jpg"
+             alt="Semiconductor Certificate"
+             class="img-fluid rounded cert-img shadow">
         <p class="mt-2"><strong>Semiconductor Packaging Manufacturing</strong><br>Arizona State University (2024)</p>
       </div>
-      <div class="col-md-4 text-center">
-        <img src="images/EIT.jpg" alt="EIT Certificate" class="img-fluid rounded cert-img shadow">
+      <div class="col-md-3 text-center">
+        <img src="images/EIT.jpg" alt="EIT Certificate"
+             class="img-fluid rounded cert-img shadow">
         <p class="mt-2"><strong>Engineer in Training (EIT)</strong><br>Texas Board of Professional Engineers (2023)</p>
       </div>
-      <div class="col-md-4 text-center">
-        <img src="images/Courseera MATLAB.jpg" alt="MATLAB Certificate" class="img-fluid rounded cert-img shadow">
+      <div class="col-md-3 text-center">
+        <img src="images/Courseera MATLAB.jpg" alt="MATLAB Certificate"
+             class="img-fluid rounded cert-img shadow">
         <p class="mt-2"><strong>Introduction to Programming with MATLAB</strong><br>Vanderbilt University (2023)</p>
       </div>
-      <div class="col-md-4 text-center">
-        <img src="images/openfoam.jpg" alt="OpenFOAM Certificate" class="img-fluid rounded cert-img shadow">
+      <div class="col-md-3 text-center">
+        <img src="images/openfoam.jpg" alt="OpenFOAM Certificate"
+             class="img-fluid rounded cert-img shadow">
         <p class="mt-2"><strong>CFD Workshop on OpenFOAM</strong><br>Kathmandu University (2020)</p>
       </div>
     </div>
@@ -184,10 +186,10 @@
   <section id="digital-credentials" class="container py-4" data-aos="fade-up">
     <h2 class="section-title">Digital Credentials</h2>
     <p class="mb-4">
-      I’ve received three digital credentials from UT Tyler. Click any badge to verify on Validity.id:
+      I’ve received three digital credentials from UT Tyler. Click any badge to verify below:
     </p>
     <div class="row g-4 justify-content-center">
-      <!-- 1) MSME Degree -->
+      <!-- MSME Degree -->
       <div class="col-12 col-sm-6 col-md-4 text-center">
         <img src="images/badges/msme-degree-badge.png"
              alt="MSME Degree Badge"
@@ -196,12 +198,13 @@
           <strong>Master of Science in Mechanical Engineering</strong><br>
           College of Engineering, UT Tyler<br>
           Issued: 05/04/2024<br>
-          <a href="https://validity.id/verify/SHARED_LINK" target="_blank">
+          <a href="https://validity.id/lookup-qr?first=Amrit&last=Thapa&birth=09161997&school=UTTyler&year=2024"
+             target="_blank">
             Verify Credential &rarr;
           </a>
         </p>
       </div>
-      <!-- 2) Thermal-Fluid Systems Certificate -->
+      <!-- Thermal-Fluid Systems -->
       <div class="col-12 col-sm-6 col-md-4 text-center">
         <img src="images/badges/thermal-fluid-badge.png"
              alt="Thermal-Fluid Systems Badge"
@@ -210,12 +213,13 @@
           <strong>Graduate Certificate: Thermal-Fluid Systems</strong><br>
           College of Engineering, UT Tyler<br>
           Issued: 05/04/2024<br>
-          <a href="https://validity.id/verify/SHARED_LINK" target="_blank">
+          <a href="https://validity.id/lookup-qr?first=Amrit&last=Thapa&birth=09161997&school=UTTyler&year=2024"
+             target="_blank">
             Verify Credential &rarr;
           </a>
         </p>
       </div>
-      <!-- 3) Systems & Controls Certificate -->
+      <!-- Systems & Controls -->
       <div class="col-12 col-sm-6 col-md-4 text-center">
         <img src="images/badges/systems-control-badge.png"
              alt="Systems & Controls Badge"
@@ -224,7 +228,8 @@
           <strong>Graduate Certificate: Systems &amp; Controls</strong><br>
           College of Engineering, UT Tyler<br>
           Issued: 05/04/2024<br>
-          <a href="https://validity.id/verify/SHARED_LINK" target="_blank">
+          <a href="https://validity.id/lookup-qr?first=Amrit&last=Thapa&birth=09161997&school=UTTyler&year=2024"
+             target="_blank">
             Verify Credential &rarr;
           </a>
         </p>
