@@ -49,10 +49,21 @@
 
     /* ---------- Certificates ---------- */
     .cert-img {
-      max-height: 200px;
-      object-fit: cover;
-      border: 1px solid #ddd;
-    }
+  width: 100%;
+  max-width: 280px;
+  height: auto;                /* maintain aspect ratio */
+  object-fit: contain;         /* show whole image */
+  border: 1px solid #ccc;      /* subtle frame */
+  border-radius: 6px;          /* rounded corners */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin: 0 auto 1rem;         /* center + spacing */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cert-img:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
   </style>
 </head>
 <body>
