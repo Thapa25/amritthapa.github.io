@@ -7,33 +7,29 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
   <style>
-    /* — Base — */
+    /* ---------- Base ---------- */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f5f7fa;
       color: #333;
       line-height: 1.6;
     }
-    .navbar-brand:hover {
-      color: #0d6efd !important;
-    }
 
-    /* — Hero — */
+    /* ---------- Hero ---------- */
     .hero {
       background-color: #d9e3f0;
-      text-align: center;
       padding: 4rem 2rem;
+      text-align: center;
     }
     .hero img {
-      width: 180px;
-      height: 180px;
+      width: 180px; height: 180px;
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 1rem;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
-    /* — Section Titles — */
+    /* ---------- Section Titles ---------- */
     .section-title {
       font-size: 2rem;
       font-weight: 600;
@@ -41,7 +37,7 @@
       color: #2c3e50;
     }
 
-    /* — Work Entries — */
+    /* ---------- Work Entries ---------- */
     .work-entry {
       border-left: 4px solid #0d6efd;
       padding-left: 1rem;
@@ -50,11 +46,8 @@
     .work-entry h5 {
       color: #0d6efd;
     }
-    .work-entry ul {
-      padding-left: 1.2rem;
-    }
 
-    /* — Certificates & Badges — */
+    /* ---------- Certificates ---------- */
     .cert-img {
       max-height: 250px;
       object-fit: cover;
@@ -78,9 +71,12 @@
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#experience">Work Experience</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#"
-               id="projectsDropdown" role="button"
-               data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle"
+               href="#"
+               id="projectsDropdown"
+               role="button"
+               data-bs-toggle="dropdown"
+               aria-expanded="false">
               Projects
             </a>
             <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
@@ -98,7 +94,7 @@
     </div>
   </nav>
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <section class="hero" data-aos="fade-up">
     <img src="images/Profile Photo.JPG" alt="Profile Picture">
     <h1 class="mb-2">Amrit Thapa</h1>
@@ -109,48 +105,76 @@
   <section id="about" class="container py-4" data-aos="fade-up">
     <h2 class="section-title">About Me</h2>
     <p>
-      Mechanical Engineer (EIT) with industry experience in utility design, mechanical analysis, and CFD simulation. Currently working as Engineer I at Techserv Engineering and Consulting, I have demonstrated the ability to deliver PE-ready utility designs and significantly boost project throughput. My background includes extensive use of SolidWorks, MATLAB, ANSYS, and OpenFOAM, with a strong foundation in thermal-fluid systems, automation, and control integration. I am driven by solving real-world engineering problems with innovative and data-driven solutions.
+      Mechanical Engineer (EIT) with industry experience in utility design, mechanical analysis, and CFD simulation. Currently
+      working as Engineer I at Techserv Engineering and Consulting, I deliver PE-ready utility designs and significantly boost
+      project throughput. Skilled in SolidWorks, MATLAB, ANSYS, and OpenFOAM, with a strong foundation in thermal-fluid systems,
+      automation, and control integration.
     </p>
   </section>
 
   <!-- Work Experience -->
   <section id="experience" class="container py-4" data-aos="fade-up">
     <h2 class="section-title">Work Experience</h2>
-    <!-- your work entries here -->
+
+    <div class="work-entry">
+      <h5>Engineer I – Techserv Engineering and Consulting, TX (2024–Present)</h5>
+      <ul>
+        <li>Designed utility pole configurations and created PE-ready field packages.</li>
+        <li>Reviewed stress reports using SPIDA and ensured NESC compliance.</li>
+        <li>Generated cost estimates and collaborated with field teams for accuracy.</li>
+      </ul>
+    </div>
+
+    <div class="work-entry">
+      <h5>Engineering Intern – InergyX Building Solutions, TX (2023–2024)</h5>
+      <ul>
+        <li>Conducted blower door and duct leakage tests under PE supervision.</li>
+        <li>Used HVAC software and drones to identify and improve efficiency.</li>
+        <li>Participated in project management and client communication.</li>
+        <li>Contributed to internal innovation projects for energy auditing.</li>
+      </ul>
+    </div>
+
+    <div class="work-entry">
+      <h5>Graduate Researcher – Entegra Sources Pvt. Ltd, Kathmandu (May–Aug 2021)</h5>
+      <ul>
+        <li>Designed a 5 tons/hr Plastic Cutter and Shredder for urban recycling initiatives.</li>
+        <li>Led remote simulations for diverse BPO-based engineering projects.</li>
+        <li>Used AutoCAD, SolidWorks, and ANSYS to develop optimized solutions.</li>
+      </ul>
+    </div>
+
+    <div class="work-entry">
+      <h5>Mechanical Design Intern – Surya Nepal Pvt. Ltd, Simara (Sep–Nov 2019)</h5>
+      <ul>
+        <li>Improved automated packaging efficiency by 6% via geometry optimization.</li>
+        <li>Engineered a cost-effective hydraulic press for tobacco cake quality control.</li>
+      </ul>
+    </div>
   </section>
 
   <!-- Certificates -->
-<section id="certificates" class="container py-4" data-aos="fade-up">
-  <h2 class="section-title">Certificates</h2>
-  <div class="row g-4">
-    <div class="col-sm-6 col-md-3 text-center">
-      <img src="images/Coursera Semiconducter Packaging Manufacturing.jpg"
-           alt="Semiconductor Packaging Manufacturing"
-           class="img-fluid rounded cert-img shadow mb-2">
-      <p><strong>Semiconductor Packaging Manufacturing</strong><br>Arizona State University (2024)</p>
+  <section id="certificates" class="container py-4" data-aos="fade-up">
+    <h2 class="section-title">Certificates</h2>
+    <div class="row g-4">
+      <div class="col-md-4 text-center">
+        <img src="images/Coursera Semiconducter Packaging Manufacturing.jpg" alt="Semiconductor" class="img-fluid rounded cert-img shadow">
+        <p class="mt-2"><strong>Semiconductor Packaging Manufacturing</strong><br>Arizona State University (2024)</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="images/EIT.jpg" alt="EIT Certificate" class="img-fluid rounded cert-img shadow">
+        <p class="mt-2"><strong>Engineer in Training (EIT)</strong><br>Texas Board of Professional Engineers (2023)</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="images/Courseera MATLAB.jpg" alt="MATLAB Certificate" class="img-fluid rounded cert-img shadow">
+        <p class="mt-2"><strong>Introduction to Programming with MATLAB</strong><br>Vanderbilt University (2023)</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="images/openfoam.jpg" alt="OpenFOAM Certificate" class="img-fluid rounded cert-img shadow">
+        <p class="mt-2"><strong>CFD Workshop on OpenFOAM</strong><br>Kathmandu University (2020)</p>
+      </div>
     </div>
-    <div class="col-sm-6 col-md-3 text-center">
-      <img src="images/EIT.jpg"
-           alt="Engineer in Training"
-           class="img-fluid rounded cert-img shadow mb-2">
-      <p><strong>Engineer in Training (EIT)</strong><br>Texas Board of Professional Engineers (2023)</p>
-    </div>
-    <div class="col-sm-6 col-md-3 text-center">
-      <img src="images/Courseera MATLAB.jpg"
-           alt="Introduction to Programming with MATLAB"
-           class="img-fluid rounded cert-img shadow mb-2">
-      <p><strong>Introduction to Programming with MATLAB</strong><br>Vanderbilt University (2023)</p>
-    </div>
-    <div class="col-sm-6 col-md-3 text-center">
-      <img src="images/openfoam.jpg"
-           alt="CFD Workshop on OpenFOAM"
-           class="img-fluid rounded cert-img shadow mb-2">
-      <p><strong>CFD Workshop on OpenFOAM</strong><br>Kathmandu University (2020)</p>
-    </div>
-  </div>
-</section>
-
-
+  </section>
   <!-- Digital Credentials -->
   <section id="digital-credentials" class="container py-4" data-aos="fade-up">
     <h2 class="section-title">Digital Credentials</h2>
@@ -207,9 +231,7 @@
   <!-- Resume -->
   <section id="resume" class="container py-4" data-aos="fade-up">
     <h2 class="section-title">Resume</h2>
-    <a href="Resume_Amrit Thapa.pdf" download class="btn btn-outline-primary">
-      Download My Resume
-    </a>
+    <a href="Resume_Amrit Thapa.pdf" download class="btn btn-outline-primary">Download My Resume</a>
   </section>
 
   <!-- Contact -->
@@ -220,7 +242,6 @@
     <p>Phone: <a href="tel:+15037030978">(503) 703-0978</a></p>
   </section>
 
-  <!-- Footer -->
   <footer class="bg-light text-center py-3 mt-4 border-top">
     &copy; 2025 Amrit Thapa. All rights reserved.
   </footer>
