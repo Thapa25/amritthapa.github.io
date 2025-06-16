@@ -7,7 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
   <style>
-    /* — Base — */
+    /* ---------- Base ---------- */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f5f7fa;
@@ -15,7 +15,7 @@
       line-height: 1.6;
     }
 
-    /* — Hero — */
+    /* ---------- Hero ---------- */
     .hero {
       background-color: #d9e3f0;
       padding: 4rem 2rem;
@@ -29,7 +29,7 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
-    /* — Section Titles — */
+    /* ---------- Section Titles ---------- */
     .section-title {
       font-size: 2rem;
       font-weight: 600;
@@ -37,7 +37,7 @@
       color: #2c3e50;
     }
 
-    /* — Work Entries — */
+    /* ---------- Work Entries ---------- */
     .work-entry {
       border-left: 4px solid #0d6efd;
       padding-left: 1rem;
@@ -45,51 +45,14 @@
     }
     .work-entry h5 {
       color: #0d6efd;
-      margin-bottom: .5rem;
-    }
-    .work-entry ul {
-      list-style: disc inside;
-      margin: 0;
-      padding-left: 1.2rem;
     }
 
-    /* — Certificates Grid: 3 across, 4th wraps below — */
-    #certificates .cert-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-    /* Tablet: 2 across */
-    @media (max-width: 768px) {
-      #certificates .cert-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    /* Phone: 1 across */
-    @media (max-width: 576px) {
-      #certificates .cert-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    #certificates .cert-item {
-      text-align: center;
-    }
-    #certificates .cert-img {
-      width: 100%;
-      height: auto;
-      max-height: 200px;
-      object-fit: contain;
+    /* ---------- Certificates ---------- */
+    .cert-img {
+      max-height: 250px;
+      object-fit: cover;
       border: 1px solid #ddd;
-      border-radius: 4px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      margin-bottom: .5rem;
-      background: #fff;
     }
-
-    /* — Utilities — */
-    .lead { font-size: 1.125rem; }
-    .navbar-brand:hover { color: #0d6efd !important; }
   </style>
 </head>
 <body>
@@ -108,15 +71,19 @@
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#experience">Work Experience</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown"
-               role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle"
+               href="#"
+               id="projectsDropdown"
+               role="button"
+               data-bs-toggle="dropdown"
+               aria-expanded="false">
               Projects
             </a>
             <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
-              <li><a class="dropdown-item" href="Projects/FEA.html">FEA &amp; Structural Simulation</a></li>
+              <li><a class="dropdown-item" href="Projects/FEA.html">FEA & Structural Simulation</a></li>
               <li><a class="dropdown-item" href="Projects/WindTunnel.html">Closed-Circuit Wind Tunnel Design</a></li>
-              <li><a class="dropdown-item" href="Projects/EvaporativeCoolerAC.html">Evaporative Cooler AC</a></li>
-              <li><a class="dropdown-item" href="Projects/EvaporativeCondenser.html">Evaporative Condenser Retrofit</a></li>
+              <li><a class="dropdown-item" href="Projects/EvaporativeCoolerAC.html">Evaporative Cooler AC with ANN Control</a></li>
+              <li><a class="dropdown-item" href="Projects/EvaporativeCondenser.html">Evaporative Cooled Condenser Retrofit</a></li>
             </ul>
           </li>
           <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
@@ -127,11 +94,11 @@
     </div>
   </nav>
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <section class="hero" data-aos="fade-up">
     <img src="images/Profile Photo.JPG" alt="Profile Picture">
     <h1 class="mb-2">Amrit Thapa</h1>
-    <p class="lead">Mechanical Engineer | CFD &amp; FEA | Thermal &amp; Utility Systems</p>
+    <p class="lead">Mechanical Engineer | CFD & FEA | Thermal & Utility Systems</p>
   </section>
 
   <!-- About -->
@@ -148,36 +115,40 @@
   <!-- Work Experience -->
   <section id="experience" class="container py-4" data-aos="fade-up">
     <h2 class="section-title">Work Experience</h2>
+
     <div class="work-entry">
-      <h5>Engineer I – Techserv Engineering &amp; Consulting, TX (2024–Present)</h5>
+      <h5>Engineer I – Techserv Engineering and Consulting, TX (2024–Present)</h5>
       <ul>
-        <li>Designed utility-pole configurations and created PE-ready field packages.</li>
+        <li>Designed utility pole configurations and created PE-ready field packages.</li>
         <li>Reviewed stress reports using SPIDA and ensured NESC compliance.</li>
         <li>Generated cost estimates and collaborated with field teams for accuracy.</li>
       </ul>
     </div>
+
     <div class="work-entry">
       <h5>Engineering Intern – InergyX Building Solutions, TX (2023–2024)</h5>
       <ul>
-        <li>Conducted blower-door and duct-leakage tests under PE supervision.</li>
+        <li>Conducted blower door and duct leakage tests under PE supervision.</li>
         <li>Used HVAC software and drones to identify and improve efficiency.</li>
         <li>Participated in project management and client communication.</li>
         <li>Contributed to internal innovation projects for energy auditing.</li>
       </ul>
     </div>
+
     <div class="work-entry">
       <h5>Graduate Researcher – Entegra Sources Pvt. Ltd, Kathmandu (May–Aug 2021)</h5>
       <ul>
-        <li>Designed a 5 tons/hr plastic cutter &amp; shredder for urban recycling initiatives.</li>
+        <li>Designed a 5 tons/hr Plastic Cutter and Shredder for urban recycling initiatives.</li>
         <li>Led remote simulations for diverse BPO-based engineering projects.</li>
         <li>Used AutoCAD, SolidWorks, and ANSYS to develop optimized solutions.</li>
       </ul>
     </div>
+
     <div class="work-entry">
       <h5>Mechanical Design Intern – Surya Nepal Pvt. Ltd, Simara (Sep–Nov 2019)</h5>
       <ul>
         <li>Improved automated packaging efficiency by 6% via geometry optimization.</li>
-        <li>Engineered a cost-effective hydraulic press for tobacco-cake quality control.</li>
+        <li>Engineered a cost-effective hydraulic press for tobacco cake quality control.</li>
       </ul>
     </div>
   </section>
@@ -185,34 +156,25 @@
   <!-- Certificates -->
   <section id="certificates" class="container py-4" data-aos="fade-up">
     <h2 class="section-title">Certificates</h2>
-    <div class="cert-grid">
-      <div class="cert-item">
-        <img src="images/Coursera Semiconducter Packaging Manufacturing.jpg"
-             alt="Semiconductor Packaging Manufacturing"
-             class="cert-img">
-        <p><strong>Semiconductor Packaging Manufacturing</strong><br>Arizona State University (2024)</p>
+    <div class="row g-4">
+      <div class="col-md-4 text-center">
+        <img src="images/Coursera Semiconducter Packaging Manufacturing.jpg" alt="Semiconductor" class="img-fluid rounded cert-img shadow">
+        <p class="mt-2"><strong>Semiconductor Packaging Manufacturing</strong><br>Arizona State University (2024)</p>
       </div>
-      <div class="cert-item">
-        <img src="images/EIT.jpg"
-             alt="Engineer in Training (EIT)"
-             class="cert-img">
-        <p><strong>Engineer in Training (EIT)</strong><br>Texas Board of Professional Engineers (2023)</p>
+      <div class="col-md-4 text-center">
+        <img src="images/EIT.jpg" alt="EIT Certificate" class="img-fluid rounded cert-img shadow">
+        <p class="mt-2"><strong>Engineer in Training (EIT)</strong><br>Texas Board of Professional Engineers (2023)</p>
       </div>
-      <div class="cert-item">
-        <img src="images/Courseera MATLAB.jpg"
-             alt="Introduction to Programming with MATLAB"
-             class="cert-img">
-        <p><strong>Introduction to Programming with MATLAB</strong><br>Vanderbilt University (2023)</p>
+      <div class="col-md-4 text-center">
+        <img src="images/Courseera MATLAB.jpg" alt="MATLAB Certificate" class="img-fluid rounded cert-img shadow">
+        <p class="mt-2"><strong>Introduction to Programming with MATLAB</strong><br>Vanderbilt University (2023)</p>
       </div>
-      <div class="cert-item">
-        <img src="images/openfoam.jpg"
-             alt="CFD Workshop on OpenFOAM"
-             class="cert-img">
-        <p><strong>CFD Workshop on OpenFOAM</strong><br>Kathmandu University (2020)</p>
+      <div class="col-md-4 text-center">
+        <img src="images/openfoam.jpg" alt="OpenFOAM Certificate" class="img-fluid rounded cert-img shadow">
+        <p class="mt-2"><strong>CFD Workshop on OpenFOAM</strong><br>Kathmandu University (2020)</p>
       </div>
     </div>
   </section>
-
   <!-- Digital Credentials -->
   <section id="digital-credentials" class="container py-4" data-aos="fade-up">
     <h2 class="section-title">Digital Credentials</h2>
@@ -220,34 +182,47 @@
       I’ve received three digital credentials from UT Tyler. Click any badge to verify:
     </p>
     <div class="row g-4 justify-content-center">
+      <!-- Shared Validity.id link -->
       <div class="col-12 col-sm-6 col-md-4 text-center">
-        
+        <img src="images/badges/msme-degree-badge.png"
+             alt="MSME Degree Badge"
+             class="img-fluid rounded cert-img shadow mb-2">
         <p>
           <strong>Master of Science in Mechanical Engineering</strong><br>
           College of Engineering, UT Tyler<br>
           Issued: 05/04/2024<br>
           <a href="https://validity.id/lookup-qr?first=Amrit&last=Thapa&birth=09161997&school=UTTyler&year=2024"
-             target="_blank">Verify Credential &rarr;</a>
+             target="_blank">
+            Verify Credential &rarr;
+          </a>
         </p>
       </div>
       <div class="col-12 col-sm-6 col-md-4 text-center">
-        
-                     <p>
+        <img src="images/badges/thermal-fluid-badge.png"
+             alt="Thermal-Fluid Systems Badge"
+             class="img-fluid rounded cert-img shadow mb-2">
+        <p>
           <strong>Graduate Certificate: Thermal-Fluid Systems</strong><br>
           College of Engineering, UT Tyler<br>
           Issued: 05/04/2024<br>
           <a href="https://validity.id/lookup-qr?first=Amrit&last=Thapa&birth=09161997&school=UTTyler&year=2024"
-             target="_blank">Verify Credential &rarr;</a>
+             target="_blank">
+            Verify Credential &rarr;
+          </a>
         </p>
       </div>
       <div class="col-12 col-sm-6 col-md-4 text-center">
-        
-                    <p>
+        <img src="images/badges/systems-control-badge.png"
+             alt="Systems & Controls Badge"
+             class="img-fluid rounded cert-img shadow mb-2">
+        <p>
           <strong>Graduate Certificate: Systems &amp; Controls</strong><br>
           College of Engineering, UT Tyler<br>
           Issued: 05/04/2024<br>
           <a href="https://validity.id/lookup-qr?first=Amrit&last=Thapa&birth=09161997&school=UTTyler&year=2024"
-             target="_blank">Verify Credential &rarr;</a>
+             target="_blank">
+            Verify Credential &rarr;
+          </a>
         </p>
       </div>
     </div>
@@ -256,9 +231,7 @@
   <!-- Resume -->
   <section id="resume" class="container py-4" data-aos="fade-up">
     <h2 class="section-title">Resume</h2>
-    <a href="Resume_Amrit Thapa.pdf" download class="btn btn-outline-primary">
-      Download My Resume
-    </a>
+    <a href="Resume_Amrit Thapa.pdf" download class="btn btn-outline-primary">Download My Resume</a>
   </section>
 
   <!-- Contact -->
