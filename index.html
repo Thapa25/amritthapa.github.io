@@ -1,24 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Amrit Thapa | Mechanical Engineer</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
-    /* ---------- Base ---------- */
+    /* ---------- Theming & Base ---------- */
+    :root { --bg: #f5f7fa; --fg: #333; --primary: #0d6efd; }
+    [data-theme="dark"] { --bg: #121212; --fg: #f0f0f0; --primary: #339af0; }
+    html { scroll-behavior: smooth; }
     body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5f7fa;
-      color: #333;
       line-height: 1.6;
     }
+    a { color: var(--primary); }
+    a:hover { text-decoration: none; }
+
+    /* ---------- Navbar ---------- */
+    .navbar, .bg-light { background-color: var(--bg) !important; }
+    .navbar-light .navbar-nav .nav-link { color: var(--fg); }
+    .navbar-light .navbar-nav .nav-link:hover,
+    .navbar-light .navbar-brand:hover { color: var(--primary) !important; }
+
+    /* Active link highlight */
+    .nav-link.active { font-weight: 600; color: var(--primary) !important; }
 
     /* ---------- Hero ---------- */
     .hero {
-      background-color: #d9e3f0;
-      padding: 4rem 2rem;
+      position: relative;
+      background:
+        linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+        url('images/hero-bg.jpg') center/cover no-repeat;
+      padding: 6rem 2rem;
       text-align: center;
     }
     .hero img {
@@ -26,98 +44,98 @@
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 1rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+      border: 2px solid #fff;
+    }
+    .hero h1, .hero .lead {
+      color: #fff;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
     }
 
-    /* ---------- Section Titles ---------- */
+    /* ---------- Section Titles & Text ---------- */
     .section-title {
       font-size: 2rem;
       font-weight: 600;
       margin: 2rem 0 1rem;
-      color: #2c3e50;
+      color: var(--fg);
     }
+    .lead { font-size: 1.125rem; }
 
-    /* ---------- Work Entries ---------- */
-    .work-entry {
-      border-left: 4px solid #0d6efd;
-      padding-left: 1rem;
-      margin-bottom: 2rem;
+    /* ---------- Work Experience Cards ---------- */
+    #experience .work-card {
+      transition: transform .2s, box-shadow .2s;
     }
-    .work-entry h5 {
-      color: #0d6efd;
+    #experience .work-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
     }
+    .card-title { color: var(--primary); }
 
-    /* ---------- Certificates ---------- */
-    .cert-img {
-  width: 100%;
-  max-width: 280px;
-  height: auto;                /* maintain aspect ratio */
-  object-fit: contain;         /* show whole image */
-  border: 1px solid #ccc;      /* subtle frame */
-  border-radius: 6px;          /* rounded corners */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  margin: 0 auto 1rem;         /* center + spacing */
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.cert-img:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-}
+    /* ---------- Certificates Grid ---------- */
+    #certificates .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    #certificates .cert-item {
+      text-align: center;
+    }
+    #certificates .cert-img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: contain;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: .5rem;
+      background: #fff;
+    }
   </style>
 </head>
-<body>
-  <!-- Navbar -->
+<body data-theme="light">
+  <!-- Navbar with Dark/Light toggle -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">Amrit Thapa</a>
-      <button class="navbar-toggler" type="button"
-              data-bs-toggle="collapse" data-bs-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false"
-              aria-label="Toggle navigation">
+      <a class="navbar-brand" href="#top">Amrit Thapa</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#experience">Work Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Work Exp.</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle"
-               href="#"
-               id="projectsDropdown"
-               role="button"
-               data-bs-toggle="dropdown"
-               aria-expanded="false">
-              Projects
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
-              <li><a class="dropdown-item" href="Projects/FEA.html">FEA & Structural Simulation</a></li>
-              <li><a class="dropdown-item" href="Projects/WindTunnel.html">Closed-Circuit Wind Tunnel Design</a></li>
-              <li><a class="dropdown-item" href="Projects/EvaporativeCoolerAC.html">Evaporative Cooler AC with ANN Control</a></li>
-              <li><a class="dropdown-item" href="Projects/EvaporativeCondenser.html">Evaporative Cooled Condenser Retrofit</a></li>
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Projects</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="Projects/FEA.html">FEA &amp; Structural Simulation</a></li>
+              <li><a class="dropdown-item" href="Projects/WindTunnel.html">Closed-Circuit Wind Tunnel</a></li>
+              <li><a class="dropdown-item" href="Projects/EvaporativeCoolerAC.html">Evaporative Cooler AC</a></li>
+              <li><a class="dropdown-item" href="Projects/EvaporativeCondenser.html">Evaporative Condenser Retrofit</a></li>
             </ul>
           </li>
           <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
           <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
+        <button id="theme-toggle" class="btn btn-outline-secondary ms-3" aria-label="Toggle theme">🌙</button>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero" data-aos="fade-up">
+  <section id="top" class="hero" data-aos="fade-up">
     <img src="images/Profile Photo.JPG" alt="Profile Picture">
     <h1 class="mb-2">Amrit Thapa</h1>
-    <p class="lead">Mechanical Engineer | CFD & FEA | Thermal & Utility Systems</p>
+    <p class="lead">Mechanical Engineer | CFD &amp; FEA | Thermal &amp; Utility Systems</p>
   </section>
 
-  <!-- About -->
+  <!-- About Me -->
   <section id="about" class="container py-4" data-aos="fade-up">
     <h2 class="section-title">About Me</h2>
     <p>
       Mechanical Engineer (EIT) with industry experience in utility design, mechanical analysis, and CFD simulation. Currently
-      working as Engineer I at Techserv Engineering and Consulting, I deliver PE-ready utility designs and significantly boost
+      working as Engineer I at Techserv Engineering and Consulting, delivering PE-ready utility designs and significantly boosting
       project throughput. Skilled in SolidWorks, MATLAB, ANSYS, and OpenFOAM, with a strong foundation in thermal-fluid systems,
       automation, and control integration.
     </p>
@@ -126,115 +144,120 @@
   <!-- Work Experience -->
   <section id="experience" class="container py-4" data-aos="fade-up">
     <h2 class="section-title">Work Experience</h2>
-
-    <div class="work-entry">
-      <h5>Engineer I – Techserv Engineering and Consulting, TX (2024–Present)</h5>
-      <ul>
-        <li>Designed utility pole configurations and created PE-ready field packages.</li>
-        <li>Reviewed stress reports using SPIDA and ensured NESC compliance.</li>
-        <li>Generated cost estimates and collaborated with field teams for accuracy.</li>
-      </ul>
-    </div>
-
-    <div class="work-entry">
-      <h5>Engineering Intern – InergyX Building Solutions, TX (2023–2024)</h5>
-      <ul>
-        <li>Conducted blower door and duct leakage tests under PE supervision.</li>
-        <li>Used HVAC software and drones to identify and improve efficiency.</li>
-        <li>Participated in project management and client communication.</li>
-        <li>Contributed to internal innovation projects for energy auditing.</li>
-      </ul>
-    </div>
-
-    <div class="work-entry">
-      <h5>Graduate Researcher – Entegra Sources Pvt. Ltd, Kathmandu (May–Aug 2021)</h5>
-      <ul>
-        <li>Designed a 5 tons/hr Plastic Cutter and Shredder for urban recycling initiatives.</li>
-        <li>Led remote simulations for diverse BPO-based engineering projects.</li>
-        <li>Used AutoCAD, SolidWorks, and ANSYS to develop optimized solutions.</li>
-      </ul>
-    </div>
-
-    <div class="work-entry">
-      <h5>Mechanical Design Intern – Surya Nepal Pvt. Ltd, Simara (Sep–Nov 2019)</h5>
-      <ul>
-        <li>Improved automated packaging efficiency by 6% via geometry optimization.</li>
-        <li>Engineered a cost-effective hydraulic press for tobacco cake quality control.</li>
-      </ul>
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm work-card">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Engineer I – Techserv Engineering &amp; Consulting, TX</h5>
+            <p class="text-muted mb-3">2024–Present</p>
+            <ul class="mb-0">
+              <li>Designed utility-pole configurations and created PE-ready field packages.</li>
+              <li>Reviewed stress reports using SPIDA and ensured NESC compliance.</li>
+              <li>Generated cost estimates and collaborated with field teams.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm work-card">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Engineering Intern – InergyX Building Solutions, TX</h5>
+            <p class="text-muted mb-3">2023–2024</p>
+            <ul class="mb-0">
+              <li>Conducted blower-door and duct-leakage tests under PE supervision.</li>
+              <li>Used HVAC software and drones to identify and improve efficiency.</li>
+              <li>Participated in project management and client communication.</li>
+              <li>Contributed to internal innovation projects for energy auditing.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm work-card">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Graduate Researcher – Entegra Sources Pvt. Ltd, Kathmandu</h5>
+            <p class="text-muted mb-3">May–Aug 2021</p>
+            <ul class="mb-0">
+              <li>Designed a 5 tons/hr plastic cutter & shredder for urban recycling initiatives.</li>
+              <li>Led remote simulations for diverse BPO-based engineering projects.</li>
+              <li>Used AutoCAD, SolidWorks, and ANSYS to develop optimized solutions.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm work-card">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Mechanical Design Intern – Surya Nepal Pvt. Ltd, Simara</h5>
+            <p class="text-muted mb-3">Sep–Nov 2019</p>
+            <ul class="mb-0">
+              <li>Improved automated packaging efficiency by 6% via geometry optimization.</li>
+              <li>Engineered a cost-effective hydraulic press for tobacco-cake quality control.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Certificates -->
   <section id="certificates" class="container py-4" data-aos="fade-up">
     <h2 class="section-title">Certificates</h2>
-    <div class="row g-4">
-      <div class="col-md-4 text-center">
-        <img src="images/Coursera Semiconducter Packaging Manufacturing.jpg" alt="Semiconductor" class="img-fluid rounded cert-img shadow">
-        <p class="mt-2"><strong>Semiconductor Packaging Manufacturing</strong><br>Arizona State University (2024)</p>
+    <div class="cert-grid">
+      <div class="cert-item">
+        <img src="images/Coursera Semiconducter Packaging Manufacturing.jpg" alt="Semiconductor Packaging Manufacturing" class="cert-img">
+        <p><strong>Semiconductor Packaging Manufacturing</strong><br>Arizona State University (2024)</p>
       </div>
-      <div class="col-md-4 text-center">
-        <img src="images/EIT.jpg" alt="EIT Certificate" class="img-fluid rounded cert-img shadow">
-        <p class="mt-2"><strong>Engineer in Training (EIT)</strong><br>Texas Board of Professional Engineers (2023)</p>
+      <div class="cert-item">
+        <img src="images/EIT.jpg" alt="Engineer in Training (EIT)" class="cert-img">
+        <p><strong>Engineer in Training (EIT)</strong><br>Texas Board of Professional Engineers (2023)</p>
       </div>
-      <div class="col-md-4 text-center">
-        <img src="images/openfoam.png" alt="OpenFOAM Certificate" class="img-fluid rounded cert-img shadow">
-        <p class="mt-2"><strong>CFD Workshop on OpenFOAM</strong><br>Kathmandu University (2020)</p>
-              </div>
-      <div class="col-md-4 text-center">
-        <img src="images/Courseera MATLAB.jpg" alt="MATLAB Certificate" class="img-fluid rounded cert-img shadow">
-        <p class="mt-2"><strong>Introduction to Programming with MATLAB</strong><br>Vanderbilt University (2023)</p>
+      <div class="cert-item">
+        <img src="images/Courseera MATLAB.jpg" alt="Introduction to Programming with MATLAB" class="cert-img">
+        <p><strong>Introduction to Programming with MATLAB</strong><br>Vanderbilt University (2023)</p>
+      </div>
+      <div class="cert-item">
+        <img src="images/openfoam.jpg" alt="CFD Workshop on OpenFOAM" class="cert-img">
+        <p><strong>CFD Workshop on OpenFOAM</strong><br>Kathmandu University (2020)</p>
       </div>
     </div>
   </section>
+
   <!-- Digital Credentials -->
   <section id="digital-credentials" class="container py-4" data-aos="fade-up">
     <h2 class="section-title">Digital Credentials</h2>
-    <p class="mb-4">
-      I’ve received three digital credentials from UT Tyler. Click any badge to verify:
-    </p>
-    <div class="row g-4 justify-content-center">
-      <!-- Shared Validity.id link -->
-      <div class="col-12 col-sm-6 col-md-4 text-center">
-        <img src="images/badges/msme-degree-badge.png"
-             alt="MSME Degree Badge"
-             class="img-fluid rounded cert-img shadow mb-2">
-        <p>
-          <strong>Master of Science in Mechanical Engineering</strong><br>
-          College of Engineering, UT Tyler<br>
-          Issued: 05/04/2024<br>
-          <a href="https://validity.id/lookup-qr?first=Amrit&last=Thapa&birth=09161997&school=UTTyler&year=2024"
-             target="_blank">
-            Verify Credential &rarr;
-          </a>
-        </p>
+    <p class="mb-4">I’ve received three digital credentials from UT Tyler. Click “Verify” to confirm each on Validity.id:</p>
+    <div class="row g-4">
+      <div class="col-12 col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Master of Science in Mechanical Engineering</h5>
+            <p class="card-text mb-4">College of Engineering, UT Tyler<br>Issued: 05/04/2024</p>
+            <a href="https://validity.id/lookup-qr?first=Amrit&last=Thapa&birth=09161997&school=UTTyler&year=2024" target="_blank" class="btn btn-primary mt-auto">Verify Credential →</a>
+          </div>
+        </div>
       </div>
-      <div class="col-12 col-sm-6 col-md-4 text-center">
-        <img src="images/badges/thermal-fluid-badge.png"
-             alt="Thermal-Fluid Systems Badge"
-             class="img-fluid rounded cert-img shadow mb-2">
-        <p>
-          <strong>Graduate Certificate: Thermal-Fluid Systems</strong><br>
-          College of Engineering, UT Tyler<br>
-          Issued: 05/04/2024<br>
-          <a href="https://validity.id/lookup-qr?first=Amrit&last=Thapa&birth=09161997&school=UTTyler&year=2024"
-             target="_blank">
-            Verify Credential &rarr;
-          </a>
-        </p>
+      <div class="col-12 col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Graduate Certificate: Thermal-Fluid Systems</h5>
+            <p class="card-text mb-4">College of Engineering, UT Tyler<br>Issued: 05/04/2024</p>
+            <a href="https://validity.id/lookup-qr?first=Amrit&last=Thapa&birth=09161997&school=UTTyler&year=2024" target="_blank" class="btn btn-primary mt-auto">Verify Credential →</a>
+          </div>
+        </div>
       </div>
-      <div class="col-12 col-sm-6 col-md-4 text-center">
-        <img src="images/badges/systems-control-badge.png"
-             alt="Systems & Controls Badge"
-             class="img-fluid rounded cert-img shadow mb-2">
-        <p>
-          <strong>Graduate Certificate: Systems &amp; Controls</strong><br>
-          College of Engineering, UT Tyler<br>
-          Issued: 05/04/2024<br>
-          <a href="https://validity.id/lookup-qr?first=Amrit&last=Thapa&birth=09161997&school=UTTyler&year=2024"
-             target="_blank">
-            Verify Credential &rarr;
-          </a>
-        </p>
+      <div class="col-12 col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Graduate Certificate: Systems &amp; Controls</h5>
+            <p class="card-text mb-4">College of Engineering, UT Tyler<br>Issued: 05/04/2024</p>
+            <a href="https://validity.id/lookup-qr?first=Amrit&last=Thapa&birth=09161997&school=UTTyler&year=2024" target="_blank" class="btn btn-primary mt-auto">Verify Credential →</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -259,6 +282,34 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init();</script>
+  <script>
+    AOS.init();
+
+    // Dark/Light Mode Toggle
+    const btn = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+    if (localStorage.theme === 'dark') root.setAttribute('data-theme','dark');
+    btn.textContent = root.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+    btn.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      localStorage.theme = isDark ? 'light' : 'dark';
+      btn.textContent = isDark ? '🌙' : '☀️';
+    });
+
+    // Active-Link Highlight on Scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', () => {
+      const pos = window.scrollY + 100;
+      sections.forEach(sec => {
+        if (pos >= sec.offsetTop && pos < sec.offsetTop + sec.offsetHeight) {
+          navLinks.forEach(a => a.classList.remove('active'));
+          const cur = document.querySelector(`.nav-link[href="#${sec.id}"]`);
+          if (cur) cur.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>

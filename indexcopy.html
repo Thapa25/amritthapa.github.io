@@ -17,18 +17,27 @@
 
     /* ---------- Hero ---------- */
     .hero {
-      background-color: #d9e3f0;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    .hero img {
-      width: 180px; height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 1rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
+  position: relative;
+  background: 
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), /* semi-transparent overlay */
+    url('images/hero-bg.jpg') center/cover no-repeat;
+  color: #fff;               /* white text */
+  text-align: center;
+  padding: 6rem 2rem;        /* a bit taller now */
+  overflow: hidden;          /* contain overlay pseudo-element */
+}
+.hero img {
+  width: 180px; height: 180px;
+  border-radius: 80%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  border: 2px solid #fff;
+}
+.hero h1,
+.hero .lead {
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
     /* ---------- Section Titles ---------- */
     .section-title {
       font-size: 2rem;
@@ -49,10 +58,21 @@
 
     /* ---------- Certificates ---------- */
     .cert-img {
-      max-height: 250px;
-      object-fit: cover;
-      border: 1px solid #ddd;
-    }
+  width: 100%;
+  max-width: 250px;
+  height: auto;                /* maintain aspect ratio */
+  object-fit: cover;         /* show whole image */
+  border: 5px solid #ccc;      /* subtle frame */
+  border-radius: 6px;          /* rounded corners */
+  box-shadow: 0 2px 8px rgba(221, 17, 17, 0.08);
+  margin: 0 auto 1rem;         /* center + spacing */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cert-img:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
   </style>
 </head>
 <body>
@@ -96,10 +116,10 @@
 
   <!-- Hero Section -->
   <section class="hero" data-aos="fade-up">
-    <img src="images/Profile Photo.JPG" alt="Profile Picture">
-    <h1 class="mb-2">Amrit Thapa</h1>
-    <p class="lead">Mechanical Engineer | CFD & FEA | Thermal & Utility Systems</p>
-  </section>
+  <img src="images/Profile.JPEG" alt="Profile Picture">
+  <h1 class="mb-2">Amrit Thapa</h1>
+  <p class="lead">Mechanical Engineer</p>
+</section>
 
   <!-- About -->
   <section id="about" class="container py-4" data-aos="fade-up">
@@ -152,6 +172,69 @@
       </ul>
     </div>
   </section>
+<!-- Digital Credentials -->
+<section id="digital-credentials" class="container py-4" data-aos="fade-up">
+  <h2 class="section-title">Digital Credentials</h2>
+  <p class="mb-4">
+    I’ve received three digital credentials from UT Tyler. Click “Verify” to confirm each on Validity.id:
+  </p>
+
+  <div class="row g-4">
+    <!-- MSME Degree -->
+    <div class="col-12 col-md-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Master of Science in Mechanical Engineering</h5>
+          <p class="card-text mb-4">
+            College of Engineering, UT Tyler<br>
+            Issued: 05/04/2024
+          </p>
+          <a href="https://validity.id/lookup-qr?first=Amrit&last=Thapa&birth=09161997&school=UTTyler&year=2024"
+             target="_blank"
+             class="mt-auto btn btn-primary">
+            Verify Credential &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thermal-Fluid Systems Cert -->
+    <div class="col-12 col-md-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Graduate Certificate: Thermal-Fluid Systems</h5>
+          <p class="card-text mb-4">
+            College of Engineering, UT Tyler<br>
+            Issued: 05/04/2024
+          </p>
+          <a href="https://validity.id/lookup-qr?first=Amrit&last=Thapa&birth=09161997&school=UTTyler&year=2024"
+             target="_blank"
+             class="mt-auto btn btn-primary">
+            Verify Credential &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Systems & Controls Cert -->
+    <div class="col-12 col-md-4">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Graduate Certificate: Systems &amp; Controls</h5>
+          <p class="card-text mb-4">
+            College of Engineering, UT Tyler<br>
+            Issued: 05/04/2024
+          </p>
+          <a href="https://validity.id/lookup-qr?first=Amrit&last=Thapa&birth=09161997&school=UTTyler&year=2024"
+             target="_blank"
+             class="mt-auto btn btn-primary">
+            Verify Credential &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- Certificates -->
   <section id="certificates" class="container py-4" data-aos="fade-up">
@@ -162,71 +245,20 @@
         <p class="mt-2"><strong>Semiconductor Packaging Manufacturing</strong><br>Arizona State University (2024)</p>
       </div>
       <div class="col-md-4 text-center">
-        <img src="images/EIT.jpg" alt="EIT Certificate" class="img-fluid rounded cert-img shadow">
-        <p class="mt-2"><strong>Engineer in Training (EIT)</strong><br>Texas Board of Professional Engineers (2023)</p>
-      </div>
-      <div class="col-md-4 text-center">
         <img src="images/Courseera MATLAB.jpg" alt="MATLAB Certificate" class="img-fluid rounded cert-img shadow">
         <p class="mt-2"><strong>Introduction to Programming with MATLAB</strong><br>Vanderbilt University (2023)</p>
       </div>
       <div class="col-md-4 text-center">
-        <img src="images/openfoam.jpg" alt="OpenFOAM Certificate" class="img-fluid rounded cert-img shadow">
+        <img src="images/openfoam.png" alt="OpenFOAM Certificate" class="img-fluid rounded cert-img shadow">
         <p class="mt-2"><strong>CFD Workshop on OpenFOAM</strong><br>Kathmandu University (2020)</p>
-      </div>
+              </div>
+      <div class="col-md-4 text-center">
+        <img src="images/EIT.jpg" alt="EIT Certificate" class="img-fluid rounded cert-img shadow">
+        <p class="mt-2"><strong>Engineer in Training (EIT)</strong><br>Texas Board of Professional Engineers (2023)</p>
+              </div>
     </div>
   </section>
-  <!-- Digital Credentials -->
-  <section id="digital-credentials" class="container py-4" data-aos="fade-up">
-    <h2 class="section-title">Digital Credentials</h2>
-    <p class="mb-4">
-      I’ve received three digital credentials from UT Tyler. Click any badge to verify:
-    </p>
-    <div class="row g-4 justify-content-center">
-      <!-- Shared Validity.id link -->
-      <div class="col-12 col-sm-6 col-md-4 text-center">
-        <img src="images/badges/msme-degree-badge.png"
-             alt="MSME Degree Badge"
-             class="img-fluid rounded cert-img shadow mb-2">
-        <p>
-          <strong>Master of Science in Mechanical Engineering</strong><br>
-          College of Engineering, UT Tyler<br>
-          Issued: 05/04/2024<br>
-          <a href="https://validity.id/lookup-qr?first=Amrit&last=Thapa&birth=09161997&school=UTTyler&year=2024"
-             target="_blank">
-            Verify Credential &rarr;
-          </a>
-        </p>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 text-center">
-        <img src="images/badges/thermal-fluid-badge.png"
-             alt="Thermal-Fluid Systems Badge"
-             class="img-fluid rounded cert-img shadow mb-2">
-        <p>
-          <strong>Graduate Certificate: Thermal-Fluid Systems</strong><br>
-          College of Engineering, UT Tyler<br>
-          Issued: 05/04/2024<br>
-          <a href="https://validity.id/lookup-qr?first=Amrit&last=Thapa&birth=09161997&school=UTTyler&year=2024"
-             target="_blank">
-            Verify Credential &rarr;
-          </a>
-        </p>
-      </div>
-      <div class="col-12 col-sm-6 col-md-4 text-center">
-        <img src="images/badges/systems-control-badge.png"
-             alt="Systems & Controls Badge"
-             class="img-fluid rounded cert-img shadow mb-2">
-        <p>
-          <strong>Graduate Certificate: Systems &amp; Controls</strong><br>
-          College of Engineering, UT Tyler<br>
-          Issued: 05/04/2024<br>
-          <a href="https://validity.id/lookup-qr?first=Amrit&last=Thapa&birth=09161997&school=UTTyler&year=2024"
-             target="_blank">
-            Verify Credential &rarr;
-          </a>
-        </p>
-      </div>
-    </div>
-  </section>
+  
 
   <!-- Resume -->
   <section id="resume" class="container py-4" data-aos="fade-up">
