@@ -1,90 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Evaporative Cooling Condenser Project | Amrit Thapa</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
-  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet"/>
-  <style>
-    /* — Base — */
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5f7fa;
-      color: #333;
-      line-height: 1.6;
-    }
-    .navbar-brand:hover {
-      color: #0d6efd !important;
-    }
-
-    /* — Hero — */
-    .project-hero {
-      background-color: #d9e3f0;
-      text-align: center;
-      padding: 3rem 2rem;
-    }
-    .project-hero h1 {
-      font-weight: bold;
-      color: #0d6efd;
-    }
-
-    /* — Section Titles — */
-    .section-title {
-      font-size: 2rem;
-      font-weight: 600;
-      margin-top: 2rem;
-      color: #2c3e50;
-    }
-
-    /* — Gallery Titles — */
-    .gallery-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #1976d2;
-      margin: 2rem 0 1rem;
-    }
-
-    /* — Thumbnails — */
-    .project-img-thumb {
-      width: 100%;
-      max-width: 340px;
-      height: 190px;
-      object-fit: cover;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      margin-bottom: .7rem;
-      background: #fff;
-      transition: transform .2s, box-shadow .2s;
-    }
-    .project-img-thumb:hover {
-      transform: scale(1.04);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.13);
-    }
-    @media (max-width: 768px) {
-      .project-img-thumb {
-        height: 140px;
-      }
-    }
-
-    /* — Captions — */
-    .img-caption {
-      font-size: .97rem;
-      color: #4d5a6b;
-      margin-bottom: 1rem;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evaporative Cooled Condenser Retrofit - Amrit Thapa</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
     <div class="container-fluid">
       <a class="navbar-brand" href="../index.html">Amrit Thapa</a>
-      <button class="navbar-toggler" type="button"
-              data-bs-toggle="collapse" data-bs-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false"
-              aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -92,14 +21,7 @@
           <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="../index.html#experience">Work Experience</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle"
-               href="#"
-               id="projectsDropdown"
-               role="button"
-               data-bs-toggle="dropdown"
-               aria-expanded="false">
-              Projects
-            </a>
+            <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" data-bs-toggle="dropdown" aria-expanded="false">Projects</a>
             <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
               <li><a class="dropdown-item" href="FEA.html">FEA & Structural Simulation</a></li>
               <li><a class="dropdown-item" href="WindTunnel.html">Closed-Circuit Wind Tunnel Design</a></li>
@@ -115,128 +37,68 @@
     </div>
   </nav>
 
-  <!-- Hero -->
   <section class="project-hero" data-aos="fade-up">
-    <h1>Evaporative Cooling Condenser<br>for Air-Conditioning</h1>
-    <p class="lead mb-1">Jump Into STEM Challenge | University of Texas at Tyler</p>
-    <p style="font-size:1rem; color:#333;">
-      Team: Amrit Thapa, Kristinoba Olotu, Oluwanisola Makinde, Rashish Adhikari
-    </p>
+    <h1>Evaporative Cooled Condenser Retrofit</h1>
+    <p class="lead">Energy Efficient Upgrade for Residential Air-Conditioning</p>
   </section>
 
-  <!-- Content -->
   <section class="container py-4" data-aos="fade-up">
-    <h2 class="section-title">Overview</h2>
+    <h2 class="section-title">Project Overview</h2>
     <p>
-      This project proposes an <strong>evaporatively cooled condenser retrofit</strong> for residential air-conditioning in hot-dry climates. By adding evaporative media, the system achieves a <strong>24% reduction in compressor work and CO₂ emissions</strong>, saving billions of lbs of CO₂ annually.
+      This project focuses on retrofitting residential air-conditioning systems with evaporatively cooled condensers. By adding evaporative media, the system achieves greater efficiency and reduces compressor workload, ultimately cutting energy costs and emissions.
+    </p>
+    <p>
+      The retrofit is designed to be plug-and-play, easily added to existing units with minimal modifications. CFD and energy simulations validate its performance and savings potential in hot-dry climates.
     </p>
 
-    <h2 class="section-title">Background & Problem</h2>
-    <p>
-      Rising AC usage in low-income areas drives up energy costs and emissions. Existing systems force households to choose between comfort and essentials.
-    </p>
-    <ul>
-      <li><strong>Albuquerque:</strong> 43% low-income, AC = 10%+ energy use.</li>
-      <li><strong>CO₂ emissions:</strong> 846.6 lbs/MWh in target zones.</li>
-    </ul>
-
-    <h2 class="section-title">Solution & Design</h2>
-    <ul>
-      <li>Add evaporative media to increase heat rejection.</li>
-      <li>Reduce compressor work by up to 24% at design point.</li>
-      <li>Use standard refrigerant (R134a) for safety.</li>
-      <li>Annual CO₂ savings: 4.45 billion lbs in region.</li>
-    </ul>
-
-    <h2 class="section-title">Key Results</h2>
-    <ul>
-      <li><strong>Compressor work ↓:</strong> 24% avg (Albuquerque), 7% (Las Vegas)</li>
-      <li><strong>CO₂ ↓:</strong> 4.45 × 10⁹ lbs/year regionally; 440 lbs/home/year</li>
-      <li><strong>Energy savings:</strong> 5.26 × 10⁹ kWh/year</li>
-    </ul>
-    <p><strong>Example:</strong> 3-ton AC at Albuquerque → 41% work saved → ~$600/home (PV over 15 yrs, 10% discount).</p>
-
-    <!-- Gallery -->
-    <div class="gallery-title">Figures & Diagrams</div>
-    <div class="row">
-      <div class="col-md-6 col-lg-4 text-center mb-4">
-        <a href="../images/CondProject/AC cycle schematic.png"
-           class="glightbox" data-glightbox="title: AC Cycle Schematic">
-          <img src="../images/CondProject/AC cycle schematic.png"
-               alt="AC cycle" class="project-img-thumb">
+    <h2 class="section-title mt-5">Visual Gallery</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <div class="col text-center">
+        <a href="../images/CondProject/AC cycle schematic.png" class="glightbox" data-glightbox="title: AC Cycle Schematic">
+          <img src="../images/CondProject/AC cycle schematic.png" alt="AC cycle schematic" class="project-image img-fluid shadow-sm">
         </a>
-        <div class="img-caption">
-          Fig 1: AC cycle – (a) Full, (b) Standard condenser, (c) Evaporative condenser
-        </div>
+        <p class="img-caption">AC cycle schematic (Full, Standard, Evaporative condenser)</p>
       </div>
-      <div class="col-md-6 col-lg-4 text-center mb-4">
-        <a href="../images/CondProject/p-h_diagram_standard.png"
-           class="glightbox" data-glightbox="title: P-h standard">
-          <img src="../images/CondProject/p-h_diagram_standard.png"
-               alt="P-h standard" class="project-img-thumb">
+      <div class="col text-center">
+        <a href="../images/CondProject/p-h_diagram_standard.png" class="glightbox" data-glightbox="title: P-h Diagram Standard">
+          <img src="../images/CondProject/p-h_diagram_standard.png" alt="P-h standard" class="project-image img-fluid shadow-sm">
         </a>
-        <div class="img-caption">Fig 2: P-h of R134a (standard condenser)</div>
+        <p class="img-caption">P-h diagram (standard condenser)</p>
       </div>
-      <div class="col-md-6 col-lg-4 text-center mb-4">
-        <a href="../images/CondProject/p-h_diagram_evap at Albuquerque,NM.png"
-           class="glightbox" data-glightbox="title: P-h evaporative">
-          <img src="../images/CondProject/p-h_diagram_evap at Albuquerque,NM.png"
-               alt="P-h evaporative" class="project-img-thumb">
+      <div class="col text-center">
+        <a href="../images/CondProject/p-h_diagram_evap at Albuquerque,NM.png" class="glightbox" data-glightbox="title: P-h Diagram Evap Albuquerque">
+          <img src="../images/CondProject/p-h_diagram_evap at Albuquerque,NM.png" alt="P-h evaporative Albuquerque" class="project-image img-fluid shadow-sm">
         </a>
-        <div class="img-caption">Fig 3: P-h (evap at Albuquerque)</div>
+        <p class="img-caption">P-h diagram (evap at Albuquerque, NM)</p>
       </div>
-      <div class="col-md-6 col-lg-4 text-center mb-4">
-        <a href="../images/CondProject/p-h_diagram_evap at Las Vegas, NV.png"
-           class="glightbox" data-glightbox="title: P-h Las Vegas">
-          <img src="../images/CondProject/p-h_diagram_evap at Las Vegas, NV.png"
-               alt="P-h Las Vegas" class="project-img-thumb">
+      <div class="col text-center">
+        <a href="../images/CondProject/p-h_diagram_evap at Las Vegas, NV.png" class="glightbox" data-glightbox="title: P-h Diagram Evap Las Vegas">
+          <img src="../images/CondProject/p-h_diagram_evap at Las Vegas, NV.png" alt="P-h evaporative Las Vegas" class="project-image img-fluid shadow-sm">
         </a>
-        <div class="img-caption">Fig 4: P-h (evap at Las Vegas)</div>
+        <p class="img-caption">P-h diagram (evap at Las Vegas, NV)</p>
       </div>
-      <div class="col-md-6 col-lg-4 text-center mb-4">
-        <a href="../images/CondProject/savings_plot.png"
-           class="glightbox" data-glightbox="title: Savings PV">
-          <img src="../images/CondProject/savings_plot.png"
-               alt="Savings PV" class="project-img-thumb">
+      <div class="col text-center">
+        <a href="../images/CondProject/savings_plot.png" class="glightbox" data-glightbox="title: PV of Savings">
+          <img src="../images/CondProject/savings_plot.png" alt="Savings PV" class="project-image img-fluid shadow-sm">
         </a>
-        <div class="img-caption">Fig 5: PV of savings (3-ton retrofit)</div>
+        <p class="img-caption">PV of energy/cost savings (3-ton retrofit)</p>
       </div>
     </div>
 
-    <h2 class="section-title">Technology-to-Market & Feasibility</h2>
-    <ul>
-      <li>PV savings up to $600/home (15 yrs, 10% discount).</li>
-      <li>Retrofit is plug-and-play for existing units.</li>
-      <li>Market via manufacturer partnerships, DoE/ARPA-E grants, patent filings.</li>
-      <li>Barriers (cost, training) mitigated by education & subsidies.</li>
-    </ul>
-
-    <h2 class="section-title">References</h2>
-    <ol>
-      <li>Center for Global Development. Developing countries’ share of carbon emissions. cgdev.org.</li>
-      <li>AAUW. The STEM gap. aauw.org.</li>
-      <li>M. Krarti & N. Howarth, J. Build. Eng. 31, 101457 (2020). doi:10.1016/j.jobe.2020.101457</li>
-    </ol>
+    <p><strong>Tools Used:</strong> MATLAB, CFD, EnergyPlus</p>
+    <p><strong>Category:</strong> HVAC, Energy Efficiency, Retrofit Technology</p>
   </section>
 
-  <!-- Footer -->
   <footer class="bg-light text-center py-3 mt-4 border-top">
     &copy; 2025 Amrit Thapa. All rights reserved.
   </footer>
 
-  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script>
     AOS.init();
-    GLightbox({
-      selector: '.glightbox',
-      touchNavigation: true,
-      loop: true,
-      closeButton: true,
-      zoomable: true
-    });
+    GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true, closeButton: true, zoomable: true });
   </script>
 </body>
 </html>

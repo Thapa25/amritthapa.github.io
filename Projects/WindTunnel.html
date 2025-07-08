@@ -1,74 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Closed-Circuit Wind Tunnel Design | Project - Amrit Thapa</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
-  <style>
-    /* — Base — */
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f5f7fa; color: #333; line-height: 1.6;
-    }
-    .navbar-brand:hover { color: #0d6efd !important; }
-
-    /* — Hero — */
-    .project-hero {
-      background: #e6ecf3; text-align: center;
-      padding: 3rem 2rem;
-    }
-    .project-hero h1 { color: #0d6efd; font-weight: bold; }
-
-    /* — Section Titles — */
-    .section-title {
-      font-size: 2rem; font-weight: 600;
-      margin: 2rem 0 1rem; color: #2c3e50;
-    }
-
-    /* — Project Images — */
-    .project-image {
-      width: 100%; max-width: 360px; height: auto;
-      object-fit: contain; border: 1px solid #ccc;
-      border-radius: 8px; background: #fff;
-      transition: transform .2s, box-shadow .2s;
-    }
-    .project-image:hover {
-      transform: scale(1.04);
-      box-shadow: 0 6px 24px rgba(0,0,0,0.13);
-    }
-    .img-caption {
-      font-size: .93rem; color: #666;
-      margin-bottom: 1.5rem; min-height: 38px;
-    }
-
-    /* — Scroll Top Button — */
-    .scroll-top {
-      display: none; position: fixed; bottom: 35px; right: 30px;
-      width: 45px; height: 45px; border: none; outline: none;
-      border-radius: 50%; background: #0d6efd; color: #fff;
-      font-size: 20px; cursor: pointer; z-index: 99;
-      box-shadow: 0 2px 6px rgba(0,0,0,.13);
-      transition: background .2s;
-    }
-    .scroll-top:hover { background: #274c77; }
-
-    /* — Accordion Active Header — */
-    .accordion-button:not(.collapsed) {
-      background: #e6ecf3; color: #0d6efd;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Closed-Circuit Wind Tunnel Design - Amrit Thapa</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
     <div class="container-fluid">
       <a class="navbar-brand" href="../index.html">Amrit Thapa</a>
-      <button class="navbar-toggler" type="button"
-              data-bs-toggle="collapse" data-bs-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false"
-              aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -76,10 +21,7 @@
           <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="../index.html#experience">Work Experience</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown"
-               role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Projects
-            </a>
+            <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" data-bs-toggle="dropdown" aria-expanded="false">Projects</a>
             <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
               <li><a class="dropdown-item" href="FEA.html">FEA & Structural Simulation</a></li>
               <li><a class="dropdown-item" href="WindTunnel.html">Closed-Circuit Wind Tunnel Design</a></li>
@@ -95,11 +37,9 @@
     </div>
   </nav>
 
-  <!-- Hero -->
   <section class="project-hero" data-aos="fade-up">
-    <h1>Closed Circuit Subsonic Wind Tunnel</h1>
-    <p class="lead">Design & Analysis of a Low-Speed Wind Tunnel with Axial Fan</p>
-    Team: Amrit Thapa, Basant Regmi, Siddhartha Shakya, Suman Shah
+    <h1>Closed-Circuit Wind Tunnel Design</h1>
+    <p class="lead">Aerodynamics Project & Airflow Testing</p>
   </section>
 
   <!-- Overview -->
@@ -209,32 +149,16 @@
         </div>
       </div>
     </div>
-
-    <h2 class="section-title mt-5">Category</h2>
-    <p>Experimental Fluid Mechanics, Wind Tunnel Design, CFD Simulation, Fan Aerodynamics</p>
-  </section>
-
-  <!-- Scroll-To-Top -->
-  <button id="scrollBtn" class="scroll-top" onclick="scrollToTop()">&#8679;</button>
-
-  <!-- Footer -->
   <footer class="bg-light text-center py-3 mt-4 border-top">
     &copy; 2025 Amrit Thapa. All rights reserved.
   </footer>
 
-  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script>
     AOS.init();
-    // Scroll to top button logic
-    const scrollBtn = document.getElementById('scrollBtn');
-    window.addEventListener('scroll', () => {
-      scrollBtn.style.display = window.scrollY > 180 ? 'block' : 'none';
-    });
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true, closeButton: true, zoomable: true });
   </script>
 </body>
 </html>

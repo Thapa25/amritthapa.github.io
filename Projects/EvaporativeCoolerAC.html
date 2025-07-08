@@ -1,107 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Evaporative Cooling AC Project | Amrit Thapa</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
-  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet"/>
-  <style>
-    /* — Base — */
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5f7fa;
-      color: #333;
-      line-height: 1.6;
-    }
-    .navbar-brand:hover {
-      color: #0d6efd !important;
-    }
-
-    /* — Hero — */
-    .project-hero {
-      background-color: #d9e3f0;
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-    .project-hero h1 {
-      color: #0d6efd;
-      font-weight: bold;
-    }
-
-    /* — Section Titles — */
-    .section-title {
-      font-size: 2rem;
-      font-weight: 600;
-      margin: 2.2rem 0 1.1rem;
-      color: #2c3e50;
-    }
-
-    /* — Gallery Titles — */
-    .gallery-title {
-      font-size: 1.28rem;
-      font-weight: 600;
-      color: #1976d2;
-      margin: 2.2rem 0 1.1rem;
-    }
-
-    /* — Thumbnails — */
-    .project-img-thumb {
-      width: 100%;
-      max-width: 340px;
-      height: 190px;
-      object-fit: cover;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      margin-bottom: .7rem;
-      background: #fff;
-      transition: transform .2s, box-shadow .2s;
-    }
-    .project-img-thumb:hover {
-      transform: scale(1.04);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.13);
-    }
-
-    /* — Captions & Links — */
-    .img-caption {
-      font-size: .97rem;
-      color: #4d5a6b;
-      min-height: 48px;
-      margin-bottom: .5rem;
-    }
-    .see-all-link {
-      font-size: .98rem;
-      color: #1976d2;
-      cursor: pointer;
-      text-decoration: underline;
-    }
-    .see-all-link:hover {
-      color: #0d6efd;
-    }
-
-    /* — GLightbox descriptions — */
-    .glightbox-clean .gdesc-inner {
-      color: #222;
-      font-size: 1rem;
-    }
-
-    @media (max-width: 768px) {
-      .project-img-thumb {
-        height: 140px;
-      }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evaporative Cooler AC with ANN Control - Amrit Thapa</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
     <div class="container-fluid">
       <a class="navbar-brand" href="../index.html">Amrit Thapa</a>
-      <button class="navbar-toggler" type="button"
-              data-bs-toggle="collapse" data-bs-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false"
-              aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -109,14 +21,7 @@
           <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="../index.html#experience">Work Experience</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle"
-               href="#"
-               id="projectsDropdown"
-               role="button"
-               data-bs-toggle="dropdown"
-               aria-expanded="false">
-              Projects
-            </a>
+            <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" data-bs-toggle="dropdown" aria-expanded="false">Projects</a>
             <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
               <li><a class="dropdown-item" href="FEA.html">FEA & Structural Simulation</a></li>
               <li><a class="dropdown-item" href="WindTunnel.html">Closed-Circuit Wind Tunnel Design</a></li>
@@ -132,31 +37,16 @@
     </div>
   </nav>
 
-  <!-- Hero -->
   <section class="project-hero" data-aos="fade-up">
-    <h1>Temperature and Humidity Control in an<br>Evaporative Cooling AC System</h1>
-    <p style="font-size:1rem; color:#333;">
-      Team: Amrit Thapa,Gideon kwabena Nyarko, Giovanni Josue Cerrato
+    <h1>Evaporative Cooler AC with ANN Control</h1>
+    <p class="lead">Low-Energy Cooling Solution for Arid Regions</p>
   </section>
 
-  <!-- Content -->
   <section class="container py-4" data-aos="fade-up">
-    <h2 class="section-title">Project Introduction</h2>
+    <h2 class="section-title">Project Overview</h2>
     <p>
-      This project developed a combined <strong>evaporative cooling and desiccant wheel (EC/DW)</strong> system for residential temperature and humidity control, aiming for substantial energy and emissions savings compared to conventional AC systems. Objectives included:
+      This project delivers an energy-saving air conditioning solution by integrating evaporative cooling with Artificial Neural Network (ANN) control for optimized operation in arid climates. The design includes sensor-based feedback, automatic water control, and a focus on minimal power use and water waste.
     </p>
-    <ul>
-      <li><b>Modeling:</b> Thermal & humidity dynamics via differential equations and Simulink.</li>
-      <li><b>Control:</b> PID & ANN strategies for setpoint tracking and disturbance rejection.</li>
-      <li><b>Evaluation:</b> Open/closed-loop simulations and energy/emissions analysis.</li>
-    </ul>
-
-    <h2 class="section-title">Key Results</h2>
-    <ul>
-      <li>&lt;3% steady-state error on temperature & humidity setpoints (closed-loop).</li>
-      <li>Up to 80% energy savings vs. vapor-compression AC.</li>
-      <li>Proved ANN viability for residential HVAC control.</li>
-    </ul>
 
     <!-- Block Diagrams Gallery -->
     <div class="gallery-title">Block Diagrams & Simulink Models</div>
@@ -298,25 +188,13 @@
     &copy; 2025 Amrit Thapa. All rights reserved.
   </footer>
 
-  <!-- Scripts -->
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script>
     AOS.init();
-
-    function openGallery(group) {
-      const first = document.querySelector('.glightbox[data-gallery="' + group + '"]');
-      if (first) first.click();
-    }
-
-    GLightbox({
-      selector: '.glightbox',
-      touchNavigation: true,
-      loop: true,
-      closeButton: true,
-      zoomable: true
-    });
+    GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true, closeButton: true, zoomable: true });
   </script>
 </body>
 </html>
